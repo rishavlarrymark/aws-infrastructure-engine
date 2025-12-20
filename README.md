@@ -10,6 +10,15 @@
 ![Cost](https://img.shields.io/badge/Cost-Aware-success)
 
 ---
+## 🎯 Career Alignment
+<This project is built with the mindset of how real cloud infrastructure must work in production —
+systems that are automated end-to-end, secure by default, cost-disciplined, and designed to remain
+reliable under real operational conditions.
+
+I am targeting **entry-level Cloud Engineer and DevOps Engineer roles**, and this project shows how I
+design, validate, and operate AWS infrastructure using **Terraform-driven Infrastructure as Code**,
+**LocalStack for fast and safe development**, and **real AWS services aligned with production-grade
+deployment workflows**. 
 
 ## Overview
 
