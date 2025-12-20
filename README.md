@@ -1,4 +1,6 @@
-# AWS Cloud Simulation Engine — Terraform + LocalStack
+# Enterprise-Grade AWS Cloud Infrastructure Engine  
+### Secure & Cost-Intelligent | Terraform-Driven  
+*(LocalStack for Development · AWS for Production Deployment)*
 
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-blueviolet)
 ![AWS](https://img.shields.io/badge/AWS-Simulated-orange)
@@ -11,12 +13,14 @@
 
 ## Overview
 
-The **AWS Cloud Simulation Engine** is a cloud-native infrastructure project designed to
-**simulate real AWS cloud services locally** using **Terraform** and **LocalStack**.
+The **Enterprise-Grade AWS Cloud Infrastructure Engine** is a cloud-native
+infrastructure project designed to **build, simulate, and validate secure,
+cost-intelligent AWS architectures** using **Terraform-driven Infrastructure
+as Code (IaC)**.
 
-The project enables **safe, cost-free, and production-style AWS experimentation**
-while following **Infrastructure as Code (IaC)**, **DevOps**, and **security-first**
-cloud engineering practices.
+The project leverages **LocalStack for local development and testing**, while
+maintaining workflows that remain **fully compatible with real AWS services
+for production deployment**.
 
 This repository is structured to closely mirror **enterprise cloud environments**,
 including modular Terraform design, environment isolation, automation support,
@@ -26,20 +30,20 @@ and event-driven architecture patterns.
 
 ## 🎯 Project Goal
 
-The primary goal of this project is to **simulate real AWS cloud services locally**
-while following **security-first**, **cost-aware**, and **production-style**
-cloud engineering practices.
+The primary goal of this project is to **design and validate AWS cloud
+infrastructure locally** while following **security-first**, **cost-aware**,
+and **production-style** cloud engineering practices.
 
-This approach allows building and testing AWS architectures **without incurring
-real cloud costs**, while maintaining workflows that remain **identical to real
-AWS environments**.
+This approach allows teams to build and test AWS architectures **without
+incurring real cloud costs**, while preserving workflows that remain
+**identical to real AWS environments**.
 
 ### Core Objectives
 
 - Simulate AWS services locally using **LocalStack**
-- Design cloud infrastructure using **Terraform (IaC)**
+- Design infrastructure using **Terraform (IaC)**
 - Apply **least-privilege IAM** and security best practices
-- Practice **cost-aware cloud design** before real deployment
+- Practice **cost-aware cloud architecture** before real deployment
 - Build and validate **event-driven architectures**
 - Enable safe experimentation without AWS billing risk
 
@@ -102,7 +106,7 @@ and harden infrastructure before production deployment**.
 ## 📁 Repository Structure
 
 ```txt
-AWS_Cloud_Simulation_Engine/
+enterprise-aws-cloud-infrastructure-engine/
 │
 ├── docs/                          # Architecture docs, diagrams, notes
 │   ├── architecture/
