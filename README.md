@@ -11,7 +11,7 @@
 
 ---
 ## 🎯 Career Alignment
-<This project is built with the mindset of how real cloud infrastructure must work in production —
+This project is built with the mindset of how real cloud infrastructure must work in production —
 systems that are automated end-to-end, secure by default, cost-disciplined, and designed to remain
 reliable under real operational conditions.
 
