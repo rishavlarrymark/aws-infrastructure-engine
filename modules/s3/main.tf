@@ -31,9 +31,10 @@ resource "aws_s3_bucket_public_access_block" "this" {
 }
 
 data "aws_iam_policy_document" "s3_read_only" {
+  count = var.enable_iam ? 1 : 0
+
   statement {
     effect = "Allow"
-
     actions = [
       "s3:GetObject",
       "s3:ListBucket"
@@ -47,6 +48,7 @@ data "aws_iam_policy_document" "s3_read_only" {
 }
 
 resource "aws_iam_policy" "s3_read_only" {
+  count  = var.enable_iam ? 1 : 0
   name   = "${var.bucket_name}-read-only"
-  policy = data.aws_iam_policy_document.s3_read_only.json
+  policy = data.aws_iam_policy_document.s3_read_only[0].json
 }

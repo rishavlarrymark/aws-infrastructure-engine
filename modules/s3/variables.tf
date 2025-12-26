@@ -4,15 +4,12 @@ variable "bucket_name" {
 }
 
 variable "tags" {
-  description = "Mandatory cost and ownership tags"
+  description = "Mandatory tags"
   type        = map(string)
+}
 
-  validation {
-    condition = (
-      contains(keys(var.tags), "Environment") &&
-      contains(keys(var.tags), "Owner") &&
-      contains(keys(var.tags), "CostCenter")
-    )
-    error_message = "Missing mandatory tags: Environment, Owner, CostCenter"
-  }
+variable "enable_iam" {
+  description = "Whether to create IAM policy"
+  type        = bool
+  default     = false
 }

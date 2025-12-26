@@ -1,6 +1,6 @@
 module "secure_s3" {
   source      = "../../modules/s3"
-  bucket_name = "engine-dev-secure-bucket"
+  bucket_name = "engine-prod-secure-bucket"
   tags        = local.common_tags
-  enable_iam  = false
+  enable_iam  = true
 }
