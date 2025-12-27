@@ -23,9 +23,9 @@ deployment workflows**.
 
 ## Overview
 
-The **Enterprise-Grade AWS Cloud Infrastructure Engine** is a cloud-native
+The **AWS Cloud Infrastructure Engine** is a cloud-native
 infrastructure project designed to **build, simulate, and validate secure,
-cost-intelligent AWS architectures** using **Terraform-driven Infrastructure
+cost-aware AWS architectures** using **Terraform-driven Infrastructure
 as Code (IaC)**.
 
 The project leverages **LocalStack for local development and testing**, while
