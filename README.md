@@ -1,5 +1,5 @@
 # Enterprise-Grade AWS Cloud Infrastructure Engine  
-### Secure & Cost-Intelligent | Terraform-Driven  
+### Secure & Cost-Aware | Terraform-Driven  
 *(LocalStack for Development · AWS for Production Deployment)*
 
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-blueviolet)
