@@ -22,7 +22,8 @@ module "iam_s3_read_role" {
 
   tags = {
     Environment = "dev"
-    Owner       = "your-name"
+    Owner       = "rishav-larrymark"
     CostCenter  = "cloud-engineering"
   }
 }
+
