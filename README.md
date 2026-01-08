@@ -1,5 +1,5 @@
 # Infrastructure as Code using Terraform on AWS
-### Secure & Cost-Aware Change & Deployment Control
+### Secure & Cost-Aware Cloud Infrastructure
 *(LocalStack for Development · AWS for Production Deployment)*
 
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-blueviolet)
