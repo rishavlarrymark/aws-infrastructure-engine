@@ -1,5 +1,5 @@
-# AWS Cloud Infrastructure Engine  
-### Secure & Cost-Aware | Terraform-Driven  
+# Infrastructure as Code using Terraform on AWS
+### Secure & Cost-Aware Change & Deployment Control
 *(LocalStack for Development · AWS for Production Deployment)*
 
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-blueviolet)
