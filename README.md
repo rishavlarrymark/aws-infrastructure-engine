@@ -1,7 +1,6 @@
-# # Production-Ready AWS Infrastructure using Terraform
+# Production-Ready AWS Infrastructure using Terraform
 ## Secure & Cost-Aware Cloud Platform
 
-### 
 *(LocalStack for Development · AWS for Production Deployment)*
 
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-blueviolet)
