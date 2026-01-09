@@ -1,4 +1,4 @@
-# Production-Ready AWS Infrastructure using Terraform
+# Production-Ready Infrastructure using Terraform on AWS
 ## Secure & Cost-Aware Cloud Platform
 
 *(LocalStack for Development · AWS for Production Deployment)*
