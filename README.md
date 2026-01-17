@@ -117,3 +117,53 @@ infrastructure **before production rollout**.
 ---
 
 ## 📁 Repository Structure
+
+```txt
+aws-cloud-infrastructure-engine/
+│
+├── ROADMAP/                         # Project roadmap and execution plan
+│
+├── docs/                            # Architecture docs, diagrams, notes
+│   ├── architecture/                # Architecture diagrams & designs
+│   ├── screenshots/                 # Validation screenshots
+│   └── notes/                       # Design and learning notes
+│
+├── localstack/                      # LocalStack configuration
+│   ├── docker-compose.yml            # LocalStack services definition
+│   ├── config/                       # LocalStack configuration files
+│   └── scripts/                      # LocalStack helper scripts
+│
+├── infrastructure/                  # Logical cloud components (conceptual grouping)
+│   ├── vpc/                          # Networking layer
+│   ├── compute/                      # Compute layer (EC2, Lambda)
+│   ├── event-driven/                 # Event-driven components
+│   └── storage/                      # Storage services
+│
+├── environments/                    # Terraform environment configurations
+│   ├── dev/                          # Development environment
+│   └── prod/                         # Production environment
+│
+├── modules/                         # Terraform reusable modules
+│   ├── vpc/                          # Networking (VPC, subnets, routing)
+│   ├── iam/                          # IAM roles, policies, least privilege
+│   ├── s3/                           # Secure S3 buckets
+│   ├── ec2/                          # Compute resources
+│   ├── lambda/                       # Serverless functions
+│   ├── dynamodb/                     # NoSQL database
+│   ├── sqs/                          # Message queues
+│   ├── sns/                          # Notifications
+│   └── cloudwatch/                   # Logs, metrics, alarms
+│
+├── logs/                            # Execution logs (audit & validation)
+│   ├── cli/                          # AWS CLI & LocalStack command logs
+│   └── terraform/                   # Terraform init, backend & state logs
+│
+├── scripts/                         # Utility and automation scripts
+│   ├── practice-script.sh
+│   ├── run.ps1
+│   └── system-info.sh
+│
+├── .gitignore
+├── LICENSE
+└── README.md
+```txt
