@@ -11,8 +11,6 @@
 ---
 ## 🎯 Career Alignment
 
-## 🎯 Career Alignment
-
 This project is built with a clear understanding of how modern cloud infrastructure
 is designed, automated, and operated in real-world engineering teams.
 
@@ -23,8 +21,6 @@ skills that are expected across Cloud, DevOps, and Cloud-Operations roles.
 The infrastructure is implemented using Terraform-driven workflows and follows a
 local-first development approach, reflecting how teams safely design, validate,
 and evolve AWS environments before production deployment.
-
-## Overview
 
 ## Overview
 
@@ -56,8 +52,6 @@ while maintaining Terraform workflows that remain **fully consistent
 with real AWS environments**.
 
 ### Core Objectives
-
-## Core Objectives
 
 - Design and provision production-ready AWS infrastructure using Terraform (IaC)
 - Implement secure-by-default IAM with strict least-privilege access controls
