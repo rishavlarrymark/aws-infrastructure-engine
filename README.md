@@ -166,4 +166,3 @@ aws-cloud-infrastructure-engine/
 ├── .gitignore
 ├── LICENSE
 └── README.md
-```txt
