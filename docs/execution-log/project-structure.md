@@ -8,7 +8,7 @@ READ MODE: SKIM
 
 
 
-# Day 2 — Project Architecture & Folder Structure
+# Project Architecture & Folder Structure
 
 ## Objective
 Design a scalable Terraform project structure that mirrors real enterprise cloud environments.
@@ -53,5 +53,6 @@ Detailed architecture is documented in:
 
 ## Outcome
 Project structure now matches real-world cloud engineering standards.
+
 
 
