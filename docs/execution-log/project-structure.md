@@ -1,3 +1,13 @@
+<!--
+DOC TYPE: Architecture Reference
+PHASE: Architecture
+DAY: 2
+PURPOSE: Project folder structure and Terraform module layout
+READ MODE: SKIM
+-->
+
+
+
 # Day 2 — Project Architecture & Folder Structure
 
 ## Objective
@@ -26,3 +36,4 @@ Detailed architecture is documented in:
 
 ## Outcome
 Project structure now matches real-world cloud engineering standards.
+
