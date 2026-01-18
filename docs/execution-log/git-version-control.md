@@ -8,7 +8,7 @@ READ MODE: SKIM
 
 
 
-## Day 5 — Git Structure & Version Control Discipline
+## Git Structure & Version Control Discipline
 
 ### Objective
 Apply industry-level Git practices to infrastructure code.
@@ -35,3 +35,4 @@ docs/git-structure.md
 - Repository is safe for public GitHub usage  
 - No secrets, logs, or Terraform state tracked  
 - Infrastructure code follows professional Git hygiene  
+
