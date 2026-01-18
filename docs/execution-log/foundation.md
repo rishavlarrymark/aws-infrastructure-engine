@@ -46,5 +46,5 @@ Verified: Docker engine running and able to manage containers.
 ## Outcome
 Local system successfully validated for AWS cloud simulation.  
 No real AWS account or credentials required.
-Environment ready for Terraform + LocalStack–based workflows.
 
+Environment ready for Terraform + LocalStack–based workflows.
