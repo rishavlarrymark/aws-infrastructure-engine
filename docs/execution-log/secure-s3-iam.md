@@ -1,80 +1,60 @@
 <!--
 DOC TYPE: Security Design
-PHASE: Security Foundation
-DAY: 6–7
-PURPOSE: Secure S3 configuration with IAM least privilege
+PHASE: Storage Security Foundation
+DAY: 6
+SERVICE: Amazon S3 (Simulated via LocalStack)
+PURPOSE: Secure-by-default S3 bucket design (encryption, versioning, public access block)
 READ MODE: READ
 -->
 
 
 
-
-## Secure S3 Infrastructure with IAM (LocalStack + Terraform)
+## Secure S3 Infrastructure (LocalStack + Terraform)
 
 ### Objective
-Design, implement, and validate a production-style secure S3 module with least-privilege IAM,
-tested locally using Terraform and LocalStack without real AWS usage.
+Build a secure-by-default S3 bucket using Terraform and validate it locally with LocalStack,
+without using any real AWS resources.
 
 ---
 
 ### Execution Summary
-A secure S3 infrastructure was built as part of the infrastructure engine and validated end-to-end
-using LocalStack. Security and access control were enforced directly in Terraform design.
+A secure S3 bucket was implemented as part of the cloud infrastructure engine.
+Core security controls were enforced directly in Terraform and validated in a local AWS-like environment.
 
 ---
 
 ### What Was Implemented
-- Encrypted S3 bucket using AES256
-- S3 versioning enabled for data protection
-- Public access fully blocked at bucket level
-- Least-privilege IAM policy scoped to the S3 bucket
-- Modular Terraform design integrated with dev environment
-
----
-
-### What This Validated
-- Terraform module reusability
-- Clear environment isolation (dev)
-- Safe Terraform state behavior
-- AWS-like service behavior in LocalStack
+- S3 bucket created using a reusable Terraform module
+- Server-side encryption enabled using AES256
+- Bucket versioning enabled for data protection
+- All public access explicitly blocked
+- Integrated with dev environment using LocalStack
 
 ---
 
 ### Issues Faced & Fixes
 
-**Provider v6 Breaking Changes**
-- Issue: Deprecated arguments caused plan/apply failures  
-- Fix: Updated Terraform configuration to align with provider v6 syntax  
+**Issue 1: Terraform AWS Provider v6 Breaking Changes**  
+- Issue: Terraform plan/apply failed after provider upgrade  
+- Root Cause: Deprecated arguments removed or modified in AWS provider v6  
+- Fix: Updated Terraform resource definitions as per latest provider documentation  
+- Learning: Provider upgrades must always be reviewed for breaking changes before applying
 
-**LocalStack Connection Failure (Port 4566)**
-- Issue: Terraform could not reach LocalStack endpoints  
-- Root Cause: LocalStack container not running  
-- Fix: Started container and verified health endpoint  
-
-**IAM InvalidClientTokenId**
-- Issue: IAM operations failing during Terraform apply  
-- Root Cause: IAM and STS endpoints not routed to LocalStack  
-- Fix: Explicitly configured IAM and STS endpoints in provider block  
+**Issue 2: LocalStack Connection Failure (Port 4566)**  
+- Issue: Terraform unable to reach AWS service endpoints  
+- Root Cause: LocalStack Docker container was not running  
+- Fix: Started LocalStack container and verified service health endpoint  
+- Learning: Always confirm LocalStack is running before executing Terraform
 
 ---
 
-### Final Result
-- Secure S3 bucket created successfully
-- IAM policy attached and validated
-- Terraform apply completed without errors
-- All resources provisioned locally with AWS-like behavior
-
----
-
-### Key Learnings
-- Security must be enforced at design time, not added later
-- Provider upgrades require careful review of breaking changes
-- LocalStack needs explicit endpoint configuration for IAM/STS
-- Debugging and troubleshooting are critical cloud engineering skills
+### Outcome
+- Secure S3 bucket provisioned successfully
+- All security controls enforced via Terraform code
+- Terraform apply completed cleanly in LocalStack
 
 ---
 
 ### Status
 - Secure S3 module complete
-- IAM access validated
-- Ready for future extensions (roles, logging, cross-account access)
+- Ready for IAM access control implementation (Day 7)
