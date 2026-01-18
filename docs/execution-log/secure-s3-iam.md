@@ -1,3 +1,14 @@
+<!--
+DOC TYPE: Security Design
+PHASE: Security Foundation
+DAY: 6–7
+PURPOSE: Secure S3 configuration with IAM least privilege
+READ MODE: READ
+-->
+
+
+
+
 # Day 6 — Secure S3 Infrastructure with IAM (LocalStack + Terraform)
 
 # Secure S3 + IAM — Execution Summary (LocalStack + Terraform)
@@ -56,3 +67,4 @@ Fix: explicitly configured IAM and STS endpoints.
 ✅ Secure S3 module complete  
 ✅ IAM validated  
 ✅ Ready for extensions (roles, logging, cross-account)
+
