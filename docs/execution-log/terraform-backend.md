@@ -8,35 +8,46 @@ READ MODE: READ
 
 
 
-# Day 4 — Terraform Backend & State Design
+## Terraform Backend & State Design
 
-## Objective
+### Objective
 Understand how Terraform state works without involving real AWS resources.
 
-## Step-by-Step Execution
+---
 
-1. Chose local backend for learning and simulation.
-2. Avoided S3 and DynamoDB to remove cloud dependency.
-3. Inspected Terraform state structure manually.
-4. Reset and reinitialized state multiple times to observe behavior.
+### Step-by-Step Execution
+- Chose a local backend for learning and simulation purposes
+- Avoided S3 and DynamoDB to remove any real cloud dependency
+- Inspected Terraform state structure manually
+- Reset and reinitialized state multiple times to observe state behavior
 
-## Backend Configuration Used
-- Backend: local
+---
+
+### Backend Configuration Used
+- Backend type: local
 - State file: terraform.tfstate
 
-## Terraform Initialization
+---
+
+### Terraform Initialization
 Command executed:
 terraform init
 
-## State Observation
+---
+
+### State Observation
 - State file created locally
-- No remote locking
-- Easy inspection and reset
+- No remote state locking involved
+- Easy inspection, deletion, and reset of state
 
-## Reference
+---
+
+### Reference
 Design details documented in:
-- `docs/terraform-backend-design.md`
+docs/terraform-backend-design.md
 
-## Outcome
-Clear understanding of Terraform backend mechanics and state lifecycle.
+---
 
+### Outcome
+Clear understanding of Terraform backend mechanics and the Terraform state lifecycle
+in a local, cloud-independent setup.
