@@ -1,3 +1,13 @@
+<!--
+DOC TYPE: Practice Guide
+PHASE: Version Control
+DAY: 5
+PURPOSE: Git discipline and version control practices for infrastructure code
+READ MODE: SKIM
+-->
+
+
+
 # Day 5 — Git Structure & Version Control Discipline
 
 ## Objective
@@ -24,3 +34,4 @@ Git policies documented in:
 
 ## Outcome
 Repository is safe for public GitHub and follows professional Git hygiene.
+
