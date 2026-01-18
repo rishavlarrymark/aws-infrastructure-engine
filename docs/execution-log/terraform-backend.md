@@ -1,3 +1,13 @@
+<!--
+DOC TYPE: Core Concept
+PHASE: Terraform Core
+DAY: 4
+PURPOSE: Terraform backend configuration and state management
+READ MODE: READ
+-->
+
+
+
 # Day 4 — Terraform Backend & State Design
 
 ## Objective
@@ -29,3 +39,4 @@ Design details documented in:
 
 ## Outcome
 Clear understanding of Terraform backend mechanics and state lifecycle.
+
