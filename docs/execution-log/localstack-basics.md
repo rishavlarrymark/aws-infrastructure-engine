@@ -1,3 +1,9 @@
+<!--
+DOC-ID: EXEC-01
+CATEGORY: Environment Setup
+SCOPE: Local AWS Simulation
+READ MODE: SKIM
+-->
 # Day 3 — AWS CLI, LocalStack & Command Validation
 
 ## Objective
@@ -25,3 +31,4 @@ Outputs were captured and verified manually.
 
 ## Outcome
 Confirmed AWS service behavior locally before Terraform automation.
+
