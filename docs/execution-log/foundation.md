@@ -22,24 +22,28 @@ Prepare a clean local system for AWS cloud simulation without using real AWS res
 
 ### Terraform
 ```bash
-terraform version
-AWS CLI
-bash
-aws --version
-awscli-local
-bash
-awslocal --version
-Docker
-bash
-docker --version
-docker ps
-Outcome
-Local system validated for cloud simulation
+## Tool Verification
 
-No real AWS account required
+All required tools were verified to ensure the local system is ready for cloud simulation.
 
+### Terraform
+terraform version  
+Verified: Terraform binary available and executable.
 
-Ready for Terraform + LocalStack based workflows
+### AWS CLI
+aws --version  
+Verified: AWS CLI installed and accessible.
 
+### awscli-local
+awslocal --version  
+Verified: LocalStack-compatible AWS CLI wrapper available.
 
+### Docker
+docker --version  
+docker ps  
+Verified: Docker engine running and able to manage containers.
 
+## Outcome
+Local system successfully validated for AWS cloud simulation.  
+No real AWS account or credentials required.  
+Environment ready for Terraform + LocalStack–based workflows.
