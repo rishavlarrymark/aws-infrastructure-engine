@@ -1,3 +1,10 @@
+<!--
+DOC TYPE: Project Foundation
+PHASE: Foundation
+DAY: 1
+PURPOSE: Project vision, principles, and overall direction
+READ MODE: READ FIRST
+-->
 # Day 1 — Local Development Foundation
 
 ## Objective
@@ -30,3 +37,4 @@ No real AWS account required
 
 
 Ready for Terraform + LocalStack based workflows
+
