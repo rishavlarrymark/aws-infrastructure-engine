@@ -8,32 +8,41 @@ READ MODE: SKIM
 
 
 
-# Day 3 — AWS CLI, LocalStack & Command Validation
+## AWS CLI, LocalStack & Command Validation
 
-## Objective
-Gain hands-on control over AWS services using CLI before automation.
+### Objective
+Gain hands-on control over AWS services using the CLI before introducing automation with Terraform.
 
-## Step-by-Step Execution
+---
 
-1. Configured AWS CLI profile for LocalStack.
-2. Used fake credentials (no real AWS access).
-3. Verified LocalStack endpoints using awslocal.
-4. Executed real AWS-style commands.
+### Step-by-Step Execution
+- Configured AWS CLI profile for LocalStack
+- Used fake credentials (no real AWS access involved)
+- Verified LocalStack service endpoints using `awslocal`
+- Executed real AWS-style CLI commands locally
 
-## Commands Executed
-- Created S3 bucket
-- Uploaded test object
-- Created IAM user
-- Queried EC2 regions
+---
 
-## Sample Outputs
-Outputs were captured and verified manually.
+### Commands Executed
+- Created an S3 bucket
+- Uploaded a test object to S3
+- Created an IAM user
+- Queried available EC2 regions
 
-## Reference
-- `docs/outputs-samples.md`
-- `docs/cli-command-cheatsheet.md`
+---
 
-## Outcome
-Confirmed AWS service behavior locally before Terraform automation.
+### Sample Outputs
+- Command outputs were captured and manually verified
+- Validated expected AWS-like behavior in LocalStack
 
+---
 
+### Reference
+- docs/outputs-samples.md
+- docs/cli-command-cheatsheet.md
+
+---
+
+### Outcome
+AWS service behavior was successfully validated in a local environment,
+ensuring readiness for Terraform-based automation in later stages.
