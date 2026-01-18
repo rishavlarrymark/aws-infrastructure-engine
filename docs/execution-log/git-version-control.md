@@ -8,30 +8,30 @@ READ MODE: SKIM
 
 
 
-# Day 5 — Git Structure & Version Control Discipline
+## Day 5 — Git Structure & Version Control Discipline
 
-## Objective
+### Objective
 Apply industry-level Git practices to infrastructure code.
 
-## Step-by-Step Execution
+### Step-by-Step Execution
+- Initialized Git only inside the project directory  
+- Created .gitignore to block:
+  - Terraform state files  
+  - Execution logs  
+  - Secrets and key material  
+- Verified that no sensitive or generated files could be committed  
+- Followed a small, meaningful commit strategy during execution  
 
-1. Initialized Git only inside project directory.
-2. Created .gitignore to block:
-   - Terraform state files
-   - Logs
-   - Secrets
-3. Verified no sensitive data could be committed.
-4. Followed small, meaningful commit strategy.
+### Commit Style Used
+- Day-based commits aligned with execution progress  
+- Clear intent expressed in commit messages  
+- No bulk or noisy commits  
 
-## Commit Style Used
-- Day-based commits
-- Clear intent in messages
-- No bulk or noisy commits
+### Reference
+Git structure and version control approach documented in:
+docs/git-structure.md
 
-## Reference
-Git policies documented in:
-- `docs/git-structure.md`
-
-## Outcome
-Repository is safe for public GitHub and follows professional Git hygiene.
-
+### Outcome
+- Repository is safe for public GitHub usage  
+- No secrets, logs, or Terraform state tracked  
+- Infrastructure code follows professional Git hygiene  
