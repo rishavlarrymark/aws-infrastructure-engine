@@ -1,58 +1,60 @@
-# Day 6 — Secure S3 Infrastructure with IAM (LocalStack + Terraform)
+<!--
+DOC TYPE: Security Design
+PHASE: Security Foundation
+DAY: 6
+PURPOSE: Secure-by-default S3 infrastructure design and validation
+READ MODE: READ
+-->
 
-# Secure S3 + IAM — Execution Summary (LocalStack + Terraform)
 
-## Objective
-Design and validate a production-style **secure S3 module** with **least-privilege IAM**, tested locally using **Terraform + LocalStack**.
 
----
+## Secure S3 Infrastructure (LocalStack + Terraform)
 
-## What Was Implemented
-- Encrypted S3 bucket (AES256)
-- Versioning enabled
-- Public access fully blocked
-- Read-only IAM policy for S3
-- Modular Terraform design wired to dev environment
-
-This validated:
-- Module reusability
-- Environment isolation
-- Safe Terraform state behavior
+### Objective
+Build a secure-by-default S3 bucket using Terraform and validate it locally with LocalStack,
+without using any real AWS resources.
 
 ---
 
-## Issues Faced & Fixes
-
-**Provider v6 breaking changes**  
-Fixed deprecated arguments after provider upgrade.
-
-**LocalStack connection failure (4566)**  
-Root cause: container not running.  
-Fix: started container and verified health endpoint.
-
-**IAM InvalidClientTokenId**  
-Root cause: IAM/STS endpoints not routed to LocalStack.  
-Fix: explicitly configured IAM and STS endpoints.
+### Execution Summary
+A secure S3 bucket was implemented as part of the cloud infrastructure engine.
+Core security controls were enforced directly in Terraform and validated in a local AWS-like environment.
 
 ---
 
-## Final Result
-- Secure S3 bucket created successfully
-- IAM policy validated
-- Terraform apply completed cleanly
-- All resources provisioned locally with AWS-like behavior
+### What Was Implemented
+* S3 bucket created using a reusable Terraform module
+* Server-side encryption enabled using AES256
+* Bucket versioning enabled for data protection
+* All public access explicitly blocked
+* Integrated with dev environment using LocalStack
 
 ---
 
-## Key Learnings
-- Security must be enforced at design time
-- Provider upgrades require careful review
-- LocalStack needs explicit endpoint configuration
-- Debugging skills matter more than happy-path setups
+### Issues Faced & Fixes
+
+**Issue 1: Terraform AWS Provider v6 Breaking Changes**  
+* Issue: Terraform plan/apply failed after provider upgrade  
+* Root Cause: Deprecated arguments removed or modified in AWS provider v6  
+* Fix: Updated Terraform resource definitions as per latest provider documentation  
+* Learning: Provider upgrades must always be reviewed for breaking changes before applying
+
+**Issue 2: LocalStack Connection Failure (Port 4566)**  
+* Issue: Terraform unable to reach AWS service endpoints  
+* Root Cause: LocalStack Docker container was not running  
+* Fix: Started LocalStack container and verified service health endpoint  
+* Learning: Always confirm LocalStack is running before executing Terraform
 
 ---
 
-## Status
-✅ Secure S3 module complete  
-✅ IAM validated  
-✅ Ready for extensions (roles, logging, cross-account)
+### Outcome
+* Secure S3 bucket provisioned successfully
+* All security controls enforced via Terraform code
+* Terraform apply completed cleanly in LocalStack
+
+---
+
+### Status
+* Secure S3 module complete
+* Ready for IAM access control implementation (Day 7)
+
