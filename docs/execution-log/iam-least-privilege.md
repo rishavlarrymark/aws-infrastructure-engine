@@ -89,5 +89,3 @@ Status
 ✅ IAM access working
 ✅ S3 secured with least privilege
 ➡️ Ready for compute integration (EC2 / Lambda)
-
----
