@@ -1,3 +1,15 @@
+<!--
+DOC TYPE: Security Design
+PHASE: Identity & Access Management Foundation
+DAY: 7
+SERVICE: AWS IAM (Simulated via LocalStack)
+FOCUS: Least-Privilege Access for S3
+PURPOSE: Enforce role-based IAM permissions with minimal S3 access
+READ MODE: READ
+-->
+
+
+
 ## IAM Least Privilege for S3
 
 ### Overview
