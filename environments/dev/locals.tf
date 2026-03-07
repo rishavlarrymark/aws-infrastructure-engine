@@ -1,7 +1,7 @@
 locals {
   common_tags = {
     Environment = "dev"
-    Owner       = "Rishav-Larrymark"
+    Owner       = "Rishav-Kumar-Giri"
     CostCenter  = "cloud-engineering"
   }
 }
