@@ -36,6 +36,8 @@ resource "aws_iam_instance_profile" "ec2_profile" {
 #         aws_security_group.ec2_sg.id
 #     ]
 
+#     user_data = file("${path.module}/user_data.sh")
+
 #     tags = merge(
 #         var.tags,
 #         {
