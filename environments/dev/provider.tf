@@ -12,6 +12,7 @@ provider "aws" {
     ec2 = "http://localhost:4566"
     iam = "http://localhost:4566"
     s3  = "http://localhost:4566"
+    elb  = "http://localhost:4566"
   }
 
   default_tags {
