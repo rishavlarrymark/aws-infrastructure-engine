@@ -59,3 +59,18 @@ module "vpc" {
   availability_zones = ["us-east-1a", "us-east-1b"]
   tags               = local.common_tags
 }
+
+# DynamoDB (NoSQL Database Layer — Dev)
+# Cloud-native persistent storage with scalable key-value architecture
+
+module "dynamodb" {
+  source = "../../modules/dynamodb"
+
+  tags = local.common_tags
+}
+
+module "sqs" {
+  source = "../../modules/sqs"
+
+  tags = local.common_tags
+}
