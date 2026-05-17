@@ -9,21 +9,6 @@
 
 ---
 
-## 🎯 Career Alignment
-
-This project is built with a clear understanding of how **modern cloud infrastructure**
-is designed, automated, and operated within real-world engineering teams.
-
-It focuses on applying **foundational industry practices** such as Infrastructure as Code,
-secure-by-default configurations, cost-aware resource design, and operational readiness —
-skills that are relevant across **Cloud, DevOps, and Cloud Operations roles**.
-
-The infrastructure follows **Terraform-driven workflows** and a **local-first development
-approach**, reflecting how teams safely design, validate, and evolve AWS environments
-before production deployment.
-
----
-
 ## Overview
 
 The **AWS Cloud Infrastructure Engine** is a cloud-native infrastructure project focused on
