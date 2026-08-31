@@ -271,17 +271,17 @@ EC2 / Auto Scaling Group
  ▼
 RDS PostgreSQL
 
-The application demonstrates:
-
-Application server configuration
-Environment variables
-Database connectivity
-S3 integration
-IAM permissions
-Application health checks
-Basic failure and recovery testing
-
 ```
+
+### The application demonstrates:
+
+- Application server configuration
+- Environment variables
+- Database connectivity
+- S3 integration
+- IAM permissions
+- Application health checks
+- Basic failure and recovery testing
 
 ---
 
@@ -322,20 +322,21 @@ Terraform Apply
     ▼
 AWS Infrastructure
 
-CI/CD Capabilities
-GitHub Actions
-Pull Request workflow
-Terraform formatting
-Terraform validation
-Security scanning
-Terraform plan
-Manual approval
-Terraform apply
-Branch protection
-Dev / Stage / Prod deployment
-AWS OIDC authentication
-
 ```
+### CI/CD Capabilities
+
+- GitHub Actions
+- Pull Request workflow
+- Terraform formatting
+- Terraform validation
+- Security scanning
+- Terraform plan
+- Manual approval
+- Terraform apply
+- Branch protection
+- Dev / Stage / Prod deployment
+- AWS OIDC authentication
+
 
 ---
 
