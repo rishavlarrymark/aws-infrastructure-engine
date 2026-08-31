@@ -378,7 +378,9 @@ AWS OIDC authentication
 ---
 # Repository Structure
 
-```markdown
+```
+
+---
 
 ## 📁 Repository Structure
 
