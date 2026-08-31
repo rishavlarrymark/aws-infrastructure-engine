@@ -129,7 +129,66 @@ The project focuses on **automation, security, scalability, high availability, a
                          └────────────────────────┘
 
 ```
+## 🏗️ Architecture
 
+### High-Level Architecture
+
+```text
+                              INTERNET
+                                  │
+                                  ▼
+                       ┌────────────────────┐
+                       │  Internet Gateway  │
+                       └─────────┬──────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │ Application Load Balancer│
+                    └────────────┬────────────┘
+                                 │
+                    ┌────────────┴────────────┐
+                    │                         │
+                    ▼                         ▼
+        ┌──────────────────────┐   ┌──────────────────────┐
+        │ Availability Zone 1  │   │ Availability Zone 2  │
+        │                      │   │                      │
+        │ Public Subnet        │   │ Public Subnet        │
+        │                      │   │                      │
+        │ Private Subnet       │   │ Private Subnet       │
+        │ ┌──────────────────┐ │   │ ┌──────────────────┐ │
+        │ │    EC2 / ASG     │ │   │ │    EC2 / ASG     │ │
+        │ │ Application Tier │ │   │ │ Application Tier │ │
+        │ └────────┬─────────┘ │   │ └────────┬─────────┘ │
+        └───────────┼──────────┘   └──────────┼──────────┘
+                    │                         │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                       ┌────────────────────┐
+                       │   RDS PostgreSQL   │
+                       │     Multi-AZ       │
+                       └────────────────────┘
+
+
+                    Private Subnet Egress
+                              │
+                              ▼
+                    ┌────────────────────┐
+                    │    NAT Gateway     │
+                    └─────────┬──────────┘
+                              │
+                              ▼
+                       Internet Gateway
+                              │
+                              ▼
+                           INTERNET
+
+
+                       ┌───────────────────┐
+                       │  S3 Object Storage │
+                       │ Static Assets/Data │
+                       └───────────────────┘
+```
 ---
 
 # AWS Services
