@@ -137,26 +137,32 @@ EC2 / Auto Scaling Group
   │
   ▼
 RDS PostgreSQL
+```
 
+**Purpose:** Shows the application request/response path from the user to the application and database.
 
+---
 
+### 🌐 Network Flow
+
+```text
                          Internet
                             │
                             ▼
                     Internet Gateway
                             │
                             ▼
-                         VPC
+                           VPC
                             │
              ┌──────────────┴──────────────┐
              │                             │
              ▼                             ▼
        Public Subnets                Private Subnets
              │                             │
-             ▼                        ┌────┴────┐
-            ALB                       │         │
-                                     ▼         ▼
-                                    EC2       RDS
+             ▼                       ┌─────┴─────┐
+            ALB                       │           │
+                                     ▼           ▼
+                                    EC2         RDS
                                      │
                                      ▼
                                 NAT Gateway
@@ -166,4 +172,8 @@ RDS PostgreSQL
                                      │
                                      ▼
                                   Internet
+```
 
+**Purpose:** Shows public/private subnet segmentation, internet connectivity, and outbound internet access for private resources.
+
+---
