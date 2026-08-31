@@ -1,4 +1,4 @@
-# Production-Ready AWS Infrastructure (Terraform-Driven, Secure & Cost-Aware)
+# AWS Infrastructure Automation Platform using Terraform (Terraform-Driven, Secure & Cost-Aware)
 *(LocalStack for Development · AWS for Production Deployment)*
 
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-blueviolet)
@@ -11,143 +11,404 @@
 
 ## Overview
 
-The **AWS Cloud Infrastructure Engine** is a cloud-native infrastructure project focused on
-designing, simulating, and validating **secure and cost-aware AWS infrastructure** using
-**Terraform-driven Infrastructure as Code (IaC)**.
+**AWS Infrastructure Automation Platform using Terraform** is an Infrastructure as Code (IaC) project focused on designing, provisioning, and validating secure, scalable, and highly available AWS infrastructure for a multi-tier web application.
 
-The project adopts a **local-first development workflow**, leveraging **LocalStack** for
-development and testing, while keeping the same Terraform configurations **fully compatible
-with real AWS environments** for production deployment.
+The project uses **Terraform modules** and **environment-based configurations** to provision AWS networking, compute, load balancing, storage, database, identity, and monitoring resources.
 
-This repository mirrors **modern cloud infrastructure design patterns**, including modular
-Terraform architecture, environment isolation, automation readiness, and event-driven
-system foundations.
+**LocalStack** is used where practical for local development and experimentation, while Terraform configurations are designed for deployment to real AWS environments.
 
 ---
 
 ## 🎯 Project Goal
 
-The goal of this project is to design, validate, and evolve AWS cloud infrastructure in a
-**local-first environment**, while applying **security-first**, **cost-aware**, and
-**production-aligned** cloud engineering practices.
+The goal is to build a strong foundation in **AWS infrastructure engineering and Infrastructure as Code** by designing and automating a complete traditional web application infrastructure.
 
-By validating infrastructure locally before any real AWS deployment, the project enables
-safe experimentation **without incurring cloud costs**, while preserving workflows that
-remain **consistent with real AWS environments**.
+The project focuses on:
 
----
-
-### Core Objectives
-
-- Design and provision production-ready AWS infrastructure using Terraform (IaC)
-- Implement secure-by-default IAM with strict least-privilege access controls
-- Enforce cost-aware infrastructure design through mandatory tagging and governance standards
-- Design, build, and validate event-driven cloud architectures
-- Establish a local-first development workflow using LocalStack prior to AWS deployment
-- Reduce cloud risk by validating infrastructure changes before production rollout
+- AWS infrastructure design
+- Infrastructure as Code with Terraform
+- Reusable Terraform modules
+- Secure infrastructure configuration
+- High availability and fault tolerance
+- Environment separation
+- Infrastructure automation
+- Infrastructure CI/CD
+- Application deployment and validation
+- Cost-aware infrastructure design
 
 ---
 
-## 🧠 Architecture Summary
+## 🏗️ Architecture
 
-**High-level flow:**
+### High-Level Architecture
 
-Terraform → LocalStack → Simulated AWS Services → AWS CLI Validation
+```text
+                         Internet
+                            │
+                            ▼
+                     Route 53 (Optional)
+                            │
+                            ▼
+                 Application Load Balancer
+                            │
+                            ▼
+                    EC2 / Auto Scaling
+                         Group
+                            │
+                  ┌─────────┴─────────┐
+                  ▼                   ▼
+           RDS PostgreSQL             S3
+           (Private Subnet)      (Object Storage)
+Network Architecture
+                         VPC
+                          │
+             ┌────────────┴────────────┐
+             │                         │
+       Public Subnets             Private Subnets
+             │                         │
+          ALB / NAT              EC2 / RDS
+             │
+        Internet Gateway
+☁️ AWS Services
+Networking
+Service	Purpose
+Amazon VPC	Network isolation
+Public & Private Subnets	Workload segmentation
+Route Tables	Traffic routing
+Internet Gateway	Internet connectivity
+NAT Gateway	Outbound internet access for private resources
+Security Groups	Stateful instance-level traffic control
+Network ACLs	Subnet-level traffic control
+Elastic IP	Static public addressing
+Route 53	DNS management (optional)
+Compute & Load Balancing
+Service	Purpose
+Amazon EC2	Application compute
+Launch Templates	Standardized EC2 configuration
+Auto Scaling Groups	Horizontal scaling and instance replacement
+Application Load Balancer	Application traffic distribution
+Target Groups	Backend instance registration
+Health Checks	Workload health validation
+Storage & Database
+Service	Purpose
+Amazon S3	Object and static asset storage
+Amazon EBS	EC2 block storage
+Amazon RDS for PostgreSQL	Relational database
+Identity & Security
+IAM Roles & Policies
+IAM Instance Profiles
+Least-Privilege Access
+Security Groups
+Key Pairs
+AWS KMS (optional)
+AWS Secrets Manager (optional)
+Monitoring
+Amazon CloudWatch
+Infrastructure metrics
+Basic logs
+Health monitoring
+Operational visibility
+🏢 Infrastructure Design
 
-The project simulates AWS APIs locally while preserving:
+The infrastructure follows a layered architecture:
 
-- Real AWS service behavior and API compatibility
-- Terraform workflows and state management
-- Environment separation (dev / stage / prod)
-- Event-driven architecture patterns
-- Automation-first infrastructure design
+                    AWS Infrastructure
+                           │
+        ┌──────────────────┼──────────────────┐
+        │                  │                  │
+    Networking          Compute           Data Layer
+        │                  │                  │
+       VPC             EC2 / ASG       RDS PostgreSQL
+    Subnets              ALB                  S3
+    Routing
+    Security
+Synchronous Application Flow
 
----
+The application follows a traditional synchronous request/response model:
 
-## 🧰 Simulated AWS Services
+Client
+  │
+  ▼
+ALB
+  │
+  ▼
+EC2 / Auto Scaling Group
+  │
+  ▼
+RDS PostgreSQL
 
-The project designs and integrates the following AWS services within a simulated environment:
+S3 is used for object and static asset storage where required.
 
-- **VPC** — networking and isolation  
-- **IAM** — roles, policies, and access control  
-- **EC2** — compute simulation  
-- **S3** — object storage  
-- **Lambda** — serverless execution  
-- **DynamoDB** — NoSQL database  
-- **SQS / SNS** — messaging and notifications  
-- **CloudWatch** — logging and monitoring  
-- **EventBridge** — event-driven workflows  
-- **KMS** — encryption and key management  
-- **API Gateway** — API exposure  
-- **End-to-end event-driven cloud architectures**
+🧩 Terraform Architecture
 
----
+Terraform is organized using reusable modules:
 
-## 🔐 Security & Cost Awareness
+environments/
+├── dev/
+├── stage/
+└── prod/
 
-Security and cost controls are treated as **first-class design principles**:
+modules/
+├── vpc/
+├── ec2/
+├── alb/
+├── rds/
+├── s3/
+├── iam/
+└── cloudwatch/
 
-- No real AWS credentials are exposed or committed
-- Terraform state files, logs, and secrets are excluded via `.gitignore`
-- Infrastructure is validated locally before any real AWS deployment
-- Prevents:
-  - accidental cloud billing
-  - misconfigured IAM permissions
-  - insecure infrastructure decisions
-- Encourages **secure-by-design** and **cost-aware-by-default** thinking
+Each environment consumes the reusable Terraform modules with environment-specific configuration.
 
-This approach reflects how professional cloud and platform teams design, test, and harden
-infrastructure **before production rollout**.
+Terraform Workflow
+Terraform Configuration
+          │
+          ▼
+       Modules
+          │
+          ▼
+     Environment
+          │
+          ▼
+    Terraform Plan
+          │
+          ▼
+    Infrastructure
+          │
+          ▼
+         AWS
+🔐 Security
 
----
+Security is incorporated into the infrastructure design rather than added after deployment.
 
-## 📁 Repository Structure
+Key practices include:
 
-```txt
-aws-cloud-infrastructure-engine/
+Least-privilege IAM policies
+IAM roles instead of embedded credentials
+IAM instance profiles for EC2
+Private subnets for backend resources
+Restricted security-group rules
+Network ACL controls
+Secrets Manager for sensitive application secrets
+KMS encryption where required
+No hard-coded AWS credentials
+Sensitive Terraform files excluded through .gitignore
+💰 Cost Awareness
+
+The project considers AWS cost during infrastructure design.
+
+Key practices include:
+
+Environment separation
+Right-sized resources
+Controlled NAT Gateway usage
+Appropriate storage configuration
+Resource tagging
+Avoiding unnecessary always-on resources
+LocalStack-based development where practical
+Destroying temporary environments after testing
+🚀 Application Deployment
+
+A sample multi-tier web application is deployed on the infrastructure created by Terraform.
+
+Application Flow
+User
+ │
+ ▼
+ALB
+ │
+ ▼
+EC2 / Auto Scaling Group
+ │
+ ▼
+RDS PostgreSQL
+
+The application demonstrates:
+
+Application server configuration
+Environment variables
+Database connectivity
+S3 integration
+IAM permissions
+Application health checks
+Basic failure and recovery testing
+🔄 Infrastructure CI/CD
+
+GitHub Actions automates the Terraform infrastructure workflow.
+
+Pipeline
+Developer
+    │
+    ▼
+GitHub Pull Request
+    │
+    ▼
+Terraform Format
+    │
+    ▼
+Terraform Validate
+    │
+    ▼
+Security Scan
+    │
+    ▼
+Terraform Plan
+    │
+    ▼
+Review / Approval
+    │
+    ▼
+Terraform Apply
+    │
+    ▼
+AWS Infrastructure
+CI/CD Capabilities
+GitHub Actions
+Pull Request workflow
+Terraform formatting
+Terraform validation
+Security scanning
+Terraform plan
+Manual approval
+Terraform apply
+Branch protection
+Dev / Stage / Prod deployment
+AWS OIDC authentication
+🧪 Testing & Validation
+Infrastructure
+Terraform validation
+Infrastructure provisioning
+Resource verification
+Network connectivity testing
+Security validation
+Application
+Application accessibility
+ALB health checks
+Database connectivity
+S3 integration
+Application health checks
+Reliability
+Auto Scaling validation
+Instance replacement
+Load balancer health checks
+Failure testing
+Recovery testing
+Cost
+Resource review
+Environment cleanup
+Cost-aware configuration validation
+📁 Repository Structure
+aws-infrastructure-engine/
 │
-├── ROADMAP/                         # Project roadmap and execution plan
+├── environments/
+│   ├── dev/
+│   │   ├── main.tf
+│   │   ├── provider.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   └── terraform.tfvars
+│   │
+│   ├── stage/
+│   │   ├── main.tf
+│   │   ├── provider.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   └── terraform.tfvars
+│   │
+│   └── prod/
+│       ├── main.tf
+│       ├── provider.tf
+│       ├── variables.tf
+│       ├── outputs.tf
+│       └── terraform.tfvars
 │
-├── docs/                            # Architecture docs, diagrams, notes
-│   ├── architecture/                # Architecture diagrams & designs
-│   ├── screenshots/                 # Validation screenshots
-│   └── notes/                       # Design and learning notes
+├── modules/
+│   ├── vpc/
+│   ├── ec2/
+│   ├── alb/
+│   ├── rds/
+│   ├── s3/
+│   ├── iam/
+│   └── cloudwatch/
 │
-├── localstack/                      # LocalStack configuration
-│   ├── docker-compose.yml            # LocalStack services definition
-│   ├── config/                       # LocalStack configuration files
-│   └── scripts/                      # LocalStack helper scripts
+├── application/
+│   ├── README.md
+│   └── deployment/
+│       └── README.md
 │
-├── infrastructure/                  # Logical cloud components (conceptual grouping)
-│   ├── vpc/                          # Networking layer
-│   ├── compute/                      # Compute layer (EC2, Lambda)
-│   ├── event-driven/                 # Event-driven components
-│   └── storage/                      # Storage services
+├── .github/
+│   └── workflows/
+│       └── terraform.yml
 │
-├── environments/                    # Terraform environment configurations
-│   ├── dev/                          # Development environment
-│   └── prod/                         # Production environment
+├── docs/
+│   ├── architecture.md
+│   ├── deployment.md
+│   └── troubleshooting.md
 │
-├── modules/                         # Terraform reusable modules
-│   ├── vpc/                          # Networking (VPC, subnets, routing)
-│   ├── iam/                          # IAM roles, policies, least privilege
-│   ├── s3/                           # Secure S3 buckets
-│   ├── ec2/                          # Compute resources
-│   ├── lambda/                       # Serverless functions
-│   ├── dynamodb/                     # NoSQL database
-│   ├── sqs/                          # Message queues
-│   ├── sns/                          # Notifications
-│   └── cloudwatch/                   # Logs, metrics, alarms
-│
-├── logs/                            # Execution logs (audit & validation)
-│   ├── cli/                          # AWS CLI & LocalStack command logs
-│   └── terraform/                   # Terraform init, backend & state logs
-│
-├── scripts/                         # Utility and automation scripts
-│   ├── practice-script.sh
-│   ├── run.ps1
-│   └── system-info.sh
+├── scripts/
+│   └── validate.sh
 │
 ├── .gitignore
-├── LICENSE
-└── README.md
+├── README.md
+└── LICENSE
+🎯 Key Learning Outcomes
+
+This project demonstrates practical knowledge of:
+
+AWS networking
+EC2 infrastructure
+Load balancing
+Auto Scaling
+Relational databases
+Object storage
+IAM and security
+High availability
+Infrastructure as Code
+Terraform modules
+Environment management
+Infrastructure CI/CD
+AWS OIDC
+Application deployment
+Troubleshooting
+Cost-aware infrastructure design
+🔮 Project Scope
+
+This project intentionally focuses on a traditional AWS web application architecture.
+
+Serverless and event-driven workloads are maintained separately in:
+
+AWS Serverless Event-Driven Processing Platform
+
+The separate project covers:
+
+API Gateway
+     │
+     ▼
+  Lambda
+     │
+     ▼
+    SQS
+     │
+     ▼
+  Lambda
+   │   │
+   ▼   ▼
+DynamoDB SNS
+
+Keeping the architectures separate makes each project easier to:
+
+Understand
+Implement
+Troubleshoot
+Test
+Explain in technical interviews
+📌 Project Summary
+
+AWS Infrastructure Automation Platform using Terraform demonstrates how to design, automate, secure, deploy, and validate a multi-tier AWS web application infrastructure using Infrastructure as Code and CI/CD practices.
+
+👨‍💻 Author
+
+Samrat Rishav
+
+📄 License
+
+This project is licensed under the MIT License.
