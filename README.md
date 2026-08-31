@@ -1,14 +1,3 @@
-# AWS Infrastructure Automation Platform using Terraform (Terraform-Driven, Secure & Cost-Aware)
-*(LocalStack for Development · AWS for Production Deployment)*
-
-![Terraform](https://img.shields.io/badge/Terraform-IaC-blueviolet)
-![AWS](https://img.shields.io/badge/AWS-Simulated-orange)
-![LocalStack](https://img.shields.io/badge/LocalStack-Enabled-blue)
-![Security](https://img.shields.io/badge/Security-Secure--by--Default-critical)
-![Cost](https://img.shields.io/badge/Cost-Cost--Aware-success)
-
-<div align="center">
-
 # ☁️ AWS Infrastructure Automation Platform using Terraform
 
 ### Terraform-Driven Infrastructure • Secure by Design • Cost-Aware
@@ -34,3 +23,22 @@
 ---
 
 > A Terraform-driven AWS infrastructure project for designing, provisioning, securing, automating, and validating a multi-tier web application environment.
+
+## 📚 Table of Contents
+
+- [Overview](#-overview)
+- [Architecture](#️-architecture)
+- [AWS Services](#-aws-services)
+- [Infrastructure Design](#-infrastructure-design)
+- [Terraform Architecture](#-terraform-architecture)
+- [Environment Strategy](#-environment-strategy)
+- [Security](#-security)
+- [Cost Awareness](#-cost-awareness)
+- [Application Deployment](#-application-deployment)
+- [Infrastructure CI/CD](#-infrastructure-cicd)
+- [Testing & Validation](#-testing--validation)
+- [Troubleshooting](#-troubleshooting)
+- [Repository Structure](#-repository-structure)
+- [Learning Outcomes](#-learning-outcomes)
+- [Project Scope](#-project-scope)
+- [Getting Started](#-getting-started)
