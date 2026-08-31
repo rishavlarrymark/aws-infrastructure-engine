@@ -35,6 +35,16 @@ The project demonstrates practical **AWS infrastructure engineering, automation,
 
 ---
 
+## 🎯 Project Goal
+
+The goal of this project is to design, provision, secure, automate, and validate a multi-tier web application infrastructure on AWS using Terraform.
+
+The project focuses on building practical AWS infrastructure engineering skills through reusable Infrastructure as Code, environment-based configuration, secure networking, scalable compute, managed database and storage services, high availability, infrastructure CI/CD, and operational validation.
+
+LocalStack is used where practical for local development and experimentation, while the infrastructure is designed for deployment to real AWS environments.
+
+---
+
 ### 🎯 Core Objectives
 
 | Area | Objective |
