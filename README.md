@@ -221,8 +221,7 @@ The infrastructure follows a layered AWS architecture with public and private su
 │                         └──────────────────┘                     │
 └──────────────────────────────────────────────────────────────────┘
 
-
-
+```
 
 ---
 
