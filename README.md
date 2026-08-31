@@ -29,22 +29,13 @@
 
 ## Overview
 
-**AWS Infrastructure Automation Platform using Terraform** is an Infrastructure as Code (IaC) project that builds and manages a multi-tier web application infrastructure on AWS.
+**AWS Infrastructure Automation Platform using Terraform** is an Infrastructure as Code (IaC) project that automates the provisioning and management of a multi-tier web application infrastructure on AWS.
 
-The project uses reusable Terraform modules and separate environments to manage:
+The project uses reusable Terraform modules and environment-based configurations to build a structured AWS environment covering networking, compute, load balancing, database, storage, security, and monitoring.
 
-- Networking — VPC, subnets, routing, NAT Gateway, Security Groups
-- Compute — EC2, Launch Templates, Auto Scaling
-- Load Balancing — Application Load Balancer
-- Database — RDS PostgreSQL
-- Storage — S3 and EBS
-- Security — IAM and least-privilege access
-- Monitoring — CloudWatch
-- CI/CD — GitHub Actions and Terraform
+Infrastructure changes are automated through **GitHub Actions**, while **LocalStack** is used where practical for local development and testing before deployment to AWS.
 
-LocalStack is used where practical for local development and testing before deploying to AWS.
-
-The project focuses on **automation, security, scalability, high availability, and cost awareness**.
+The project demonstrates practical **AWS infrastructure engineering, automation, security, scalability, high availability, and cost-aware design**.
 
 ---
 
