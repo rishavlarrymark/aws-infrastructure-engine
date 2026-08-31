@@ -184,7 +184,6 @@ RDS PostgreSQL
 
 # 5. AWS Services
 
-```markdown
 ## ☁️ AWS Services
 
 ### 🌐 Networking
@@ -239,5 +238,3 @@ RDS PostgreSQL
 - Basic logs
 - Health monitoring
 - Operational visibility
-
-```
