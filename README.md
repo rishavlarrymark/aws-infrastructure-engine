@@ -122,7 +122,7 @@ The project follows a **local-first development approach** where LocalStack is u
                          │ Object Store │
                          └──────────────┘
 
-
+```
 ---
 
 ### 🔄 Request Flow
