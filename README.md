@@ -24,24 +24,7 @@
 
 > A Terraform-driven AWS infrastructure project for designing, provisioning, securing, automating, and validating a multi-tier web application environment.
 
-## 📚 Table of Contents
 
-- [Overview](#-overview)
-- [Architecture](#️-architecture)
-- [AWS Services](#-aws-services)
-- [Infrastructure Design](#-infrastructure-design)
-- [Terraform Architecture](#-terraform-architecture)
-- [Environment Strategy](#-environment-strategy)
-- [Security](#-security)
-- [Cost Awareness](#-cost-awareness)
-- [Application Deployment](#-application-deployment)
-- [Infrastructure CI/CD](#-infrastructure-cicd)
-- [Testing & Validation](#-testing--validation)
-- [Troubleshooting](#-troubleshooting)
-- [Repository Structure](#-repository-structure)
-- [Learning Outcomes](#-learning-outcomes)
-- [Project Scope](#-project-scope)
-- [Getting Started](#-getting-started)
 
 ---
 
@@ -126,7 +109,7 @@ The project follows a **local-first development approach** where LocalStack is u
 
 ---
 
-# 5. AWS Services
+# AWS Services
 
 ## ☁️ AWS Services
 
@@ -222,7 +205,22 @@ The infrastructure follows a layered AWS architecture with public and private su
 └──────────────────────────────────────────────────────────────────┘
 
 ```
+## 🏢 Infrastructure Design
 
+The infrastructure follows a layered architecture:
+
+```text
+                    AWS Infrastructure
+                           │
+        ┌──────────────────┼──────────────────┐
+        │                  │                  │
+    Networking          Compute           Data Layer
+        │                  │                  │
+       VPC             EC2 / ASG       RDS PostgreSQL
+    Subnets              ALB                  S3
+    Routing
+    Security
+    
 ---
 
 # 15. Repository Structure
