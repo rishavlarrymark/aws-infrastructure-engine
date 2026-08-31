@@ -178,3 +178,64 @@ RDS PostgreSQL
 **Purpose:** Shows public/private subnet segmentation, internet connectivity, and outbound internet access for private resources.
 
 ---
+
+
+---
+
+# 5. AWS Services
+
+```markdown
+## ☁️ AWS Services
+
+### 🌐 Networking
+
+| AWS Service | Role |
+|---|---|
+| **Amazon VPC** | Network isolation |
+| **Public Subnets** | Internet-facing resources |
+| **Private Subnets** | Backend resources |
+| **Route Tables** | Traffic routing |
+| **Internet Gateway** | Internet connectivity |
+| **NAT Gateway** | Outbound internet access |
+| **Security Groups** | Stateful traffic control |
+| **Network ACLs** | Subnet-level traffic control |
+| **Elastic IP** | Static public addressing |
+| **Route 53** | DNS management *(optional)* |
+
+### 🖥️ Compute & Load Balancing
+
+| AWS Service | Role |
+|---|---|
+| **Amazon EC2** | Application compute |
+| **Launch Templates** | Standardized instance configuration |
+| **Auto Scaling Groups** | Horizontal scaling and replacement |
+| **Application Load Balancer** | Traffic distribution |
+| **Target Groups** | Backend registration |
+| **Health Checks** | Application health validation |
+
+### 🗄️ Storage & Database
+
+| AWS Service | Role |
+|---|---|
+| **Amazon S3** | Object/static asset storage |
+| **Amazon EBS** | EC2 block storage |
+| **Amazon RDS PostgreSQL** | Relational application database |
+
+### 🔐 Identity & Security
+
+| Component | Purpose |
+|---|---|
+| **IAM Roles** | AWS service permissions |
+| **IAM Policies** | Permission control |
+| **IAM Instance Profiles** | EC2 AWS access |
+| **Least Privilege** | Minimize permissions |
+| **KMS** | Encryption *(optional)* |
+| **Secrets Manager** | Secret management *(optional)* |
+
+### 📊 Monitoring
+
+- Amazon CloudWatch
+- Infrastructure metrics
+- Basic logs
+- Health monitoring
+- Operational visibility
