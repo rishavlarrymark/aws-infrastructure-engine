@@ -123,59 +123,6 @@ The project follows a **local-first development approach** where LocalStack is u
                          └──────────────┘
 
 ```
----
-
-### 🔄 Request Flow
-
-```text
-User
-  │
-  ▼
-Application Load Balancer
-  │
-  ▼
-EC2 / Auto Scaling Group
-  │
-  ▼
-RDS PostgreSQL
-```
-
-**Purpose:** Shows the application request/response path from the user to the application and database.
-
----
-
-### 🌐 Network Flow
-
-```text
-                         Internet
-                            │
-                            ▼
-                    Internet Gateway
-                            │
-                            ▼
-                           VPC
-                            │
-             ┌──────────────┴──────────────┐
-             │                             │
-             ▼                             ▼
-       Public Subnets                Private Subnets
-             │                             │
-             ▼                       ┌─────┴─────┐
-            ALB                       │           │
-                                     ▼           ▼
-                                    EC2         RDS
-                                     │
-                                     ▼
-                                NAT Gateway
-                                     │
-                                     ▼
-                              Internet Gateway
-                                     │
-                                     ▼
-                                  Internet
-```
-
-**Purpose:** Shows public/private subnet segmentation, internet connectivity, and outbound internet access for private resources.
 
 ---
 
@@ -240,21 +187,38 @@ RDS PostgreSQL
 
 ## 🧱 Infrastructure Design
 
-The infrastructure follows a layered design:
+The infrastructure follows a layered AWS architecture with public and private subnets, load-balanced application servers, and a private PostgreSQL database.
 
 ```text
-┌───────────────────────────────────────────────────┐
-│                    AWS VPC                        │
-│                                                   │
-│  ┌─────────────────┐      ┌───────────────────┐  │
-│  │ Public Subnets  │      │ Private Subnets   │  │
-│  │                 │      │                   │  │
-│  │      ALB        │─────▶│    EC2 / ASG      │  │
-│  │                 │      │                   │  │
-│  └─────────────────┘      │         │         │  │
-│                           │         ▼         │  │
-│                           │    RDS PostgreSQL │  │
-│                           └───────────────────┘  │
-│                                                   │
-│                    S3 Object Storage              │
-└───────────────────────────────────────────────────┘
+                                      INTERNET
+                                         │
+                                         ▼
+                              ┌────────────────────┐
+                              │  Internet Gateway   │
+                              └─────────┬──────────┘
+                                        │
+                                        ▼
+┌──────────────────────────────────────────────────────────────────┐
+│                              AWS VPC                             │
+│                                                                  │
+│   ┌─────────────────────────┐    ┌────────────────────────────┐ │
+│   │      PUBLIC SUBNETS     │    │      PRIVATE SUBNETS       │ │
+│   │                         │    │                            │ │
+│   │   ┌─────────────────┐   │    │   ┌────────────────────┐   │ │
+│   │   │       ALB       │───────────▶│    EC2 / ASG       │   │ │
+│   │   └─────────────────┘   │    │   └─────────┬──────────┘   │ │
+│   │                         │    │             │              │ │
+│   │   ┌─────────────────┐   │    │             ▼              │ │
+│   │   │   NAT Gateway   │◀──────────────┌──────────────┐      │ │
+│   │   └─────────────────┘   │    │      │ RDS PostgreSQL│      │ │
+│   │                         │    │      └──────────────┘      │ │
+│   └─────────────────────────┘    │                            │ │
+│                                  └────────────────────────────┘ │
+│                                                                  │
+│                         ┌──────────────────┐                     │
+│                         │   S3 Object      │                     │
+│                         │     Storage      │                     │
+│                         └──────────────────┘                     │
+└──────────────────────────────────────────────────────────────────┘
+
+
