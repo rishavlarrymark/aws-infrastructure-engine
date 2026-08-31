@@ -1,4 +1,4 @@
-# ☁️ AWS Infrastructure Automation Platform using Terraform
+# AWS Infrastructure Automation Platform using Terraform
 
 ### Terraform-Driven Infrastructure • Secure by Design • Cost-Aware
 
