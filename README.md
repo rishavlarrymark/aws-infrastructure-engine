@@ -174,7 +174,7 @@ The project focuses on **automation, security, scalability, high availability, a
 
 The infrastructure follows a layered AWS architecture with public and private subnets, load-balanced application servers, and a private PostgreSQL database.
 
-```text
+```
                                       INTERNET
                                          │
                                          ▼
@@ -207,26 +207,10 @@ The infrastructure follows a layered AWS architecture with public and private su
 └──────────────────────────────────────────────────────────────────┘
 
 ```
-## 🏢 Infrastructure Design
-
-The infrastructure follows a layered architecture:
-
-```text
-                    AWS Infrastructure
-                           │
-        ┌──────────────────┼──────────────────┐
-        │                  │                  │
-    Networking          Compute           Data Layer
-        │                  │                  │
-       VPC             EC2 / ASG       RDS PostgreSQL
-    Subnets              ALB                  S3
-    Routing
-    Security
-```
 
 ---
 
-# 15. Repository Structure
+# Repository Structure
 
 ```markdown
 ## 📁 Repository Structure
