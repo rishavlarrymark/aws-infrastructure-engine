@@ -235,3 +235,26 @@ RDS PostgreSQL
 - Basic logs
 - Health monitoring
 - Operational visibility
+
+---
+
+## 🧱 Infrastructure Design
+
+The infrastructure follows a layered design:
+
+```text
+┌───────────────────────────────────────────────────┐
+│                    AWS VPC                        │
+│                                                   │
+│  ┌─────────────────┐      ┌───────────────────┐  │
+│  │ Public Subnets  │      │ Private Subnets   │  │
+│  │                 │      │                   │  │
+│  │      ALB        │─────▶│    EC2 / ASG      │  │
+│  │                 │      │                   │  │
+│  └─────────────────┘      │         │         │  │
+│                           │         ▼         │  │
+│                           │    RDS PostgreSQL │  │
+│                           └───────────────────┘  │
+│                                                   │
+│                    S3 Object Storage              │
+└───────────────────────────────────────────────────┘
