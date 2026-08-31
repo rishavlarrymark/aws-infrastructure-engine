@@ -79,3 +79,45 @@ The project follows a **local-first development approach** where LocalStack is u
 | **CI/CD** | Validate and deploy Terraform through GitHub Actions |
 | **Operations** | Validate infrastructure and troubleshoot failures |
 | **Cost** | Apply cost-aware infrastructure decisions |
+
+---
+
+## 🏗️ Architecture
+
+### High-Level Architecture
+
+```text
+                              INTERNET
+                                  │
+                                  ▼
+                         ┌─────────────────┐
+                         │  Route 53       │
+                         │   (Optional)    │
+                         └────────┬────────┘
+                                  │
+                                  ▼
+                    ┌──────────────────────────┐
+                    │ Application Load Balancer│
+                    │          (ALB)           │
+                    └────────────┬─────────────┘
+                                 │
+                  ┌──────────────┴──────────────┐
+                  │                             │
+                  ▼                             ▼
+          ┌──────────────┐              ┌──────────────┐
+          │ EC2 Instance │              │ EC2 Instance │
+          │      #1      │              │      #2      │
+          └──────┬───────┘              └──────┬───────┘
+                 │                             │
+                 └──────────────┬──────────────┘
+                                │
+                                ▼
+                     ┌─────────────────────┐
+                     │   RDS PostgreSQL    │
+                     │    Private Subnet   │
+                     └─────────────────────┘
+
+                         ┌──────────────┐
+                         │     S3       │
+                         │ Object Store │
+                         └──────────────┘
