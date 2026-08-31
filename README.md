@@ -134,9 +134,7 @@ The project focuses on **automation, security, scalability, high availability, a
 
 ---
 
-# AWS Services
-
-## ☁️ AWS Services
+# ☁️ AWS Services
 
 ### 🌐 Networking
 
