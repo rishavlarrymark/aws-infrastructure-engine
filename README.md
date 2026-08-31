@@ -209,6 +209,7 @@ modules/
 ├── iam/
 └── cloudwatch/
 
+```
 ---
 
 
@@ -232,6 +233,7 @@ Key practices include:
 - No hard-coded AWS credentials
 - Sensitive Terraform files excluded through `.gitignore`
 
+```
 ---
 
 ## 💰 Cost Awareness
@@ -278,6 +280,8 @@ S3 integration
 IAM permissions
 Application health checks
 Basic failure and recovery testing
+
+```
 
 ---
 
@@ -331,6 +335,8 @@ Branch protection
 Dev / Stage / Prod deployment
 AWS OIDC authentication
 
+```
+
 ---
 
 
@@ -373,6 +379,7 @@ AWS OIDC authentication
 # Repository Structure
 
 ```markdown
+
 ## 📁 Repository Structure
 
 ```text
