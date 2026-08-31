@@ -493,25 +493,26 @@ Cost-aware infrastructure design
 
 ---
 
-📌 Project Summary
+---
 
-AWS Infrastructure Automation Platform using Terraform demonstrates how to design, automate, secure, deploy, and validate a multi-tier AWS web application infrastructure using Infrastructure as Code and CI/CD practices.
+## 📌 Project Summary
 
---
-👨‍💻 Author
+**AWS Infrastructure Automation Platform using Terraform** demonstrates the design, automation, security, deployment, and validation of a multi-tier AWS web application infrastructure using **Infrastructure as Code (IaC)** and **CI/CD practices**.
 
-Rishav Kumar Giri
+The project focuses on reusable Terraform modules, secure AWS architecture, environment-based infrastructure, high availability, application deployment, and automated infrastructure delivery.
 
--- 
+---
 
-📄 License
+## 👨‍💻 Author
 
-This project is licensed under the MIT License.
+**Rishav Kumar Giri**
 
+Cloud Engineer | AWS | Terraform | Infrastructure Automation
 
-### One correction before you paste it
+---
 
-Your actual repository is now:
+## 📄 License
 
-```text
-aws-infrastructure-engine
+This project is licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for details.
