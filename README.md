@@ -18,10 +18,6 @@
   <b>Infrastructure Automation</b>
 </p>
 
-</div>
-
----
-
 > A Terraform-driven AWS infrastructure project for designing, provisioning, securing, automating, and validating a multi-tier web application environment.
 
 
