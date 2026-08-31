@@ -25,7 +25,6 @@
 > A Terraform-driven AWS infrastructure project for designing, provisioning, securing, automating, and validating a multi-tier web application environment.
 
 
-
 ---
 
 ## Overview
@@ -191,13 +190,186 @@ The project focuses on **automation, security, scalability, high availability, a
 
 ---
 
-## 🧱 Infrastructure Design
+## 🧩 Terraform Architecture
 
-The infrastructure follows a layered AWS architecture with public and private subnets, load-balanced application servers, and a private PostgreSQL database.
+Terraform is organized using reusable modules:
 
+```text
+environments/
+├── dev/
+├── stage/
+└── prod/
+
+modules/
+├── vpc/
+├── ec2/
+├── alb/
+├── rds/
+├── s3/
+├── iam/
+└── cloudwatch/
 
 ---
 
+
+### 2. Security
+
+```markdown
+## 🔐 Security
+
+Security is incorporated into the infrastructure design rather than added after deployment.
+
+Key practices include:
+
+- Least-privilege IAM policies
+- IAM roles instead of embedded credentials
+- IAM instance profiles for EC2
+- Private subnets for backend resources
+- Restricted security-group rules
+- Network ACL controls
+- Secrets Manager for sensitive application secrets
+- KMS encryption where required
+- No hard-coded AWS credentials
+- Sensitive Terraform files excluded through `.gitignore`
+
+---
+
+## 💰 Cost Awareness
+
+The project considers AWS cost during infrastructure design.
+
+Key practices include:
+
+- Environment separation
+- Right-sized resources
+- Controlled NAT Gateway usage
+- Appropriate storage configuration
+- Resource tagging
+- Avoiding unnecessary always-on resources
+- LocalStack-based development where practical
+- Destroying temporary AWS environments after testing
+
+---
+
+## 🚀 Application Deployment
+
+A sample multi-tier web application is deployed on the infrastructure created by Terraform.
+
+### Application Flow
+
+```text
+User
+ │
+ ▼
+ALB
+ │
+ ▼
+EC2 / Auto Scaling Group
+ │
+ ▼
+RDS PostgreSQL
+
+The application demonstrates:
+
+Application server configuration
+Environment variables
+Database connectivity
+S3 integration
+IAM permissions
+Application health checks
+Basic failure and recovery testing
+
+---
+
+
+### 5. Infrastructure CI/CD
+
+```markdown
+## 🔄 Infrastructure CI/CD
+
+GitHub Actions automates the Terraform infrastructure workflow.
+
+### Pipeline
+
+```text
+Developer
+    │
+    ▼
+GitHub Pull Request
+    │
+    ▼
+Terraform Format
+    │
+    ▼
+Terraform Validate
+    │
+    ▼
+Security Scan
+    │
+    ▼
+Terraform Plan
+    │
+    ▼
+Review / Approval
+    │
+    ▼
+Terraform Apply
+    │
+    ▼
+AWS Infrastructure
+
+CI/CD Capabilities
+GitHub Actions
+Pull Request workflow
+Terraform formatting
+Terraform validation
+Security scanning
+Terraform plan
+Manual approval
+Terraform apply
+Branch protection
+Dev / Stage / Prod deployment
+AWS OIDC authentication
+
+---
+
+
+### 6. Testing & Validation
+
+```markdown
+## 🧪 Testing & Validation
+
+### Infrastructure
+
+- Terraform validation
+- Infrastructure provisioning
+- Resource verification
+- Network connectivity testing
+- Security validation
+
+### Application
+
+- Application accessibility
+- ALB health checks
+- Database connectivity
+- S3 integration
+- Application health checks
+
+### Reliability
+
+- Auto Scaling validation
+- Instance replacement
+- Load balancer health checks
+- Failure testing
+- Recovery testing
+
+### Cost
+
+- Resource review
+- Environment cleanup
+- Cost-aware configuration validation
+
+---
 # Repository Structure
 
 ```markdown
