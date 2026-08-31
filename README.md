@@ -222,3 +222,93 @@ The infrastructure follows a layered AWS architecture with public and private su
 └──────────────────────────────────────────────────────────────────┘
 
 
+
+
+---
+
+# 15. Repository Structure
+
+```markdown
+## 📁 Repository Structure
+
+```text
+aws-infrastructure-engine/
+│
+├── environments/
+│   ├── dev/
+│   │   ├── main.tf
+│   │   ├── provider.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   └── terraform.tfvars
+│   │
+│   ├── stage/
+│   │   ├── main.tf
+│   │   ├── provider.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   └── terraform.tfvars
+│   │
+│   └── prod/
+│       ├── main.tf
+│       ├── provider.tf
+│       ├── variables.tf
+│       ├── outputs.tf
+│       └── terraform.tfvars
+│
+├── modules/
+│   ├── vpc/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   ├── ec2/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   ├── alb/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   ├── rds/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   ├── s3/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   ├── iam/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   │
+│   └── cloudwatch/
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
+│
+├── application/
+│   ├── README.md
+│   └── deployment/
+│       └── README.md
+│
+├── .github/
+│   └── workflows/
+│       └── terraform.yml
+│
+├── docs/
+│   ├── architecture.md
+│   ├── deployment.md
+│   └── troubleshooting.md
+│
+├── scripts/
+│   └── validate.sh
+│
+├── .gitignore
+├── README.md
+└── LICENSE
