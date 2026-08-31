@@ -122,11 +122,15 @@ The project follows a **local-first development approach** where LocalStack is u
                          │ Object Store │
                          └──────────────┘
 
+---
 
+### 🔄 Request Flow
+
+```text
 User
   │
   ▼
-ALB
+Application Load Balancer
   │
   ▼
 EC2 / Auto Scaling Group
@@ -135,23 +139,31 @@ EC2 / Auto Scaling Group
 RDS PostgreSQL
 
 
-                    VPC
-                     │
-        ┌────────────┴────────────┐
-        │                         │
-        ▼                         ▼
- Public Subnets             Private Subnets
-        │                         │
-   ┌────┴────┐              ┌─────┴─────┐
-   │   ALB   │              │ EC2 / RDS │
-   └────┬────┘              └───────────┘
-        │
-   Internet Gateway
 
-Private Subnets
-      │
-      ▼
- NAT Gateway
-      │
-      ▼
- Internet Gateway
+                         Internet
+                            │
+                            ▼
+                    Internet Gateway
+                            │
+                            ▼
+                         VPC
+                            │
+             ┌──────────────┴──────────────┐
+             │                             │
+             ▼                             ▼
+       Public Subnets                Private Subnets
+             │                             │
+             ▼                        ┌────┴────┐
+            ALB                       │         │
+                                     ▼         ▼
+                                    EC2       RDS
+                                     │
+                                     ▼
+                                NAT Gateway
+                                     │
+                                     ▼
+                              Internet Gateway
+                                     │
+                                     ▼
+                                  Internet
+
