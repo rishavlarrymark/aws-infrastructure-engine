@@ -179,9 +179,6 @@ RDS PostgreSQL
 
 ---
 
-
----
-
 # 5. AWS Services
 
 ## ☁️ AWS Services
