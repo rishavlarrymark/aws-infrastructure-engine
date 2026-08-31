@@ -121,3 +121,37 @@ The project follows a **local-first development approach** where LocalStack is u
                          │     S3       │
                          │ Object Store │
                          └──────────────┘
+
+
+User
+  │
+  ▼
+ALB
+  │
+  ▼
+EC2 / Auto Scaling Group
+  │
+  ▼
+RDS PostgreSQL
+
+
+                    VPC
+                     │
+        ┌────────────┴────────────┐
+        │                         │
+        ▼                         ▼
+ Public Subnets             Private Subnets
+        │                         │
+   ┌────┴────┐              ┌─────┴─────┐
+   │   ALB   │              │ EC2 / RDS │
+   └────┬────┘              └───────────┘
+        │
+   Internet Gateway
+
+Private Subnets
+      │
+      ▼
+ NAT Gateway
+      │
+      ▼
+ Internet Gateway
