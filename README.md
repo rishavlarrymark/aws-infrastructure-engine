@@ -42,3 +42,40 @@
 - [Learning Outcomes](#-learning-outcomes)
 - [Project Scope](#-project-scope)
 - [Getting Started](#-getting-started)
+
+---
+
+## 🎯 Overview
+
+**AWS Infrastructure Automation Platform using Terraform** is an Infrastructure as Code (IaC) project focused on designing, provisioning, securing, automating, and validating AWS infrastructure for a multi-tier web application.
+
+The project uses **Terraform modules** and **environment-based configurations** to manage:
+
+- 🌐 Networking
+- 🖥️ Compute
+- ⚖️ Load Balancing
+- 🗄️ Relational Database
+- 📦 Object Storage
+- 🔐 Identity & Security
+- 📊 Infrastructure Monitoring
+- 🔄 Infrastructure CI/CD
+
+The project follows a **local-first development approach** where LocalStack is used where practical for development and experimentation, while Terraform configurations are designed to remain compatible with real AWS environments.
+
+---
+
+### 🎯 Core Objectives
+
+| Area | Objective |
+|---|---|
+| **IaC** | Manage AWS infrastructure using Terraform |
+| **Networking** | Design isolated public/private network layers |
+| **Compute** | Deploy scalable EC2-based workloads |
+| **Database** | Integrate RDS PostgreSQL |
+| **Storage** | Use S3 and EBS appropriately |
+| **Security** | Apply least-privilege access |
+| **Availability** | Design for Multi-AZ and failure recovery |
+| **Automation** | Automate infrastructure deployment |
+| **CI/CD** | Validate and deploy Terraform through GitHub Actions |
+| **Operations** | Validate infrastructure and troubleshoot failures |
+| **Cost** | Apply cost-aware infrastructure decisions |
