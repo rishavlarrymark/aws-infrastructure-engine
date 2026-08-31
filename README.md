@@ -209,10 +209,6 @@ modules/
 ```
 ---
 
-
-### 2. Security
-
-```markdown
 ## 🔐 Security
 
 Security is incorporated into the infrastructure design rather than added after deployment.
@@ -230,7 +226,6 @@ Key practices include:
 - No hard-coded AWS credentials
 - Sensitive Terraform files excluded through `.gitignore`
 
-```
 ---
 
 ## 💰 Cost Awareness
