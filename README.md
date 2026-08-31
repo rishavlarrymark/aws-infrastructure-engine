@@ -470,28 +470,26 @@ aws-infrastructure-engine/
 
 ---
 
-🎯 Key Learning Outcomes
+## 🎯 Key Learning Outcomes
 
 This project demonstrates practical knowledge of:
 
-AWS networking
-EC2 infrastructure
-Load balancing
-Auto Scaling
-Relational databases
-Object storage
-IAM and security
-High availability
-Infrastructure as Code
-Terraform modules
-Environment management
-Infrastructure CI/CD
-AWS OIDC
-Application deployment
-Troubleshooting
-Cost-aware infrastructure design
-
----
+- AWS networking
+- EC2 infrastructure
+- Load balancing
+- Auto Scaling
+- Relational databases
+- Object storage
+- IAM and security
+- High availability
+- Infrastructure as Code (IaC)
+- Terraform modules
+- Environment management
+- Infrastructure CI/CD
+- AWS OIDC
+- Application deployment
+- Troubleshooting
+- Cost-aware infrastructure design
 
 ---
 
@@ -507,7 +505,7 @@ The project focuses on reusable Terraform modules, secure AWS architecture, envi
 
 **Rishav Kumar Giri**
 
-Cloud Engineer | AWS | Terraform | Infrastructure Automation
+`AWS` · `Terraform` · `Infrastructure Automation`
 
 ---
 
